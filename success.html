@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Success | MJ Hack Revolution 2020</title>
+    <script type="text/javascript">
+      function gup(name, url) {
+        if (!url) url = location.href;
+        name = name.replace(/[\[]/, '\\\[').replace(/[\]]/, '\\\]');
+        var regexS = '[\\?&]' + name + '=([^&#]*)';
+        var regex = new RegExp(regexS);
+        var results = regex.exec(url);
+        return results == null ? null : results[1];
+      }
+
+      if (!gup('s', window.location.href)) {
+        window.location = 'index.html';
+      }
+    </script>
+    <style>
+      * {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 90vh;
+        width: 100vw;
+        align-items: center;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      h1 {
+        opacity: 0;
+        text-align: center;
+        animation: text-anim 300ms ease 300ms forwards;
+      }
+      @keyframes text-anim {
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes scaleAnimation {
+        0% {
+          opacity: 0;
+          transform: scale(1.5);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes drawCircle {
+        0% {
+          stroke-dashoffset: 300px;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes drawCheck {
+        0% {
+          stroke-dashoffset: 35px;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      @keyframes drawLine {
+        from {
+          stroke-dashoffset: 100;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      #successAnimationCircle,
+      #failureAnimationCircle {
+        stroke-dasharray: 300px 300px;
+        stroke: #1baa1b;
+      }
+
+      #successAnimationCheck,
+      #failureAnimationCheck {
+        stroke-dasharray: 35px 35px;
+        stroke: #1baa1b;
+      }
+      #successAnimation.animated,
+      #failureAnimation.animated {
+        animation: 1s ease-out 0s 1 both scaleAnimation;
+      }
+      #successAnimation.animated #successAnimationCircle,
+      #successAnimation.animated #failureAnimationCircle,
+      #failureAnimation.animated #successAnimationCircle,
+      #failureAnimation.animated #failureAnimationCircle {
+        animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle;
+      }
+      #successAnimation.animated #successAnimationCheck,
+      #failureAnimation.animated #successAnimationCheck {
+        animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck;
+      }
+      #successAnimation.animated .failureAnimationCheckLine,
+      #failureAnimation.animated .failureAnimationCheckLine {
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: drawLine 1s cubic-bezier(1, 0.2, 0.1, 1) forwards;
+      }
+      #animate {
+        background: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        border: 0;
+        border-radius: 3px;
+        bottom: 100px;
+        color: #1baa1b;
+        left: 50%;
+        outline: 0;
+        padding: 10px 30px;
+        position: absolute;
+        transform: translateX(-50%);
+      }
+      #animate:active {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="checkmark">
+      <svg
+        id="successAnimation"
+        class="animated"
+        xmlns="http://www.w3.org/2000/svg"
+        width="200"
+        height="200"
+        viewBox="0 0 70 70"
+      >
+        <circle
+          id="successAnimationCircle"
+          cx="35"
+          cy="35"
+          r="24"
+          stroke="#1baa1b"
+          stroke-width="2"
+          stroke-linecap="round"
+          fill="transparent"
+        />
+        <polyline
+          id="successAnimationCheck"
+          stroke="#1baa1b"
+          stroke-width="2"
+          points="23 34 34 43 47 27"
+          fill="transparent"
+        />
+      </svg>
+    </div>
+    <h1>You have been registered Successfully!</h1>
+  </body>
+</html>

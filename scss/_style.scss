@@ -1,0 +1,95 @@
+.img-csi {
+  max-width: 80%;
+}
+.img-ecell {
+  max-width: 115%;
+}
+.header-link {
+  color: white;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+.count-down {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 90%;
+  max-width: 500px;
+  .number,
+  .dot {
+    font-size: 50px;
+    font-family: monospace;
+    font-weight: bold;
+  }
+  .text {
+    margin-top: -5px;
+    color: $gray-400;
+    font-size: 15px;
+    display: inline-block;
+  }
+}
+#register-button {
+  transition: all 200ms linear;
+}
+.ration-container {
+  position: relative;
+  background: #f7f7f7;
+  margin-bottom: 30px;
+  &::after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 100%;
+  }
+  & > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+.img-2019 {
+  padding-bottom: 69%;
+}
+.img-2018 {
+  padding-bottom: 75%;
+}
+.img-2017 {
+  padding-bottom: 68%;
+}
+.img-2016 {
+  padding-bottom: 51.25%;
+}
+.img-2015 {
+  padding-bottom: 66.5%;
+}
+.img-2014 {
+  padding-bottom: 67%;
+}
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 150ms;
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .count-down {
+    .number,
+    .dot {
+      font-size: 74px;
+    }
+
+    .text {
+      font-size: 20px;
+    }
+  }
+}
+
+
+
